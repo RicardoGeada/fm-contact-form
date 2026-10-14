@@ -25,6 +25,17 @@
   color: var(--color-grey-900);
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 body {
   min-height: 100dvh;
   background-color: var(--color-green-200);
@@ -39,6 +50,10 @@ body {
 
 .card .heading {
   margin-bottom: var(--spacing-400);
+}
+
+.card fieldset {
+  border: transparent;
 }
 
 .custom-input {
@@ -82,4 +97,26 @@ body {
 .custom-input:has(input:user-invalid) .error-message,
 .custom-input:has(textarea:user-invalid) .error-message {
  display: block;
+}
+
+
+button[type="submit"] {
+  background-color: var(--color-green-600);
+  color: var(--color-white);
+  padding: var(--spacing-200) var(--spacing-500);
+  border-radius: var(--spacing-100);
+  outline: transparent;
+  border: transparent;
+}
+
+button[type="submit"]:hover {
+  background-color: color-mix(in srgb, var(--color-green-600), #000000 50%);
+  cursor: pointer;
+}
+
+button[type="submit"]:focus {
+  background-color: color-mix(in srgb, var(--color-green-600), #000000 50%);
+  cursor: pointer;
+  outline: 1px solid color-mix(in srgb, var(--color-green-600), #000000 50%);
+  outline-offset: 1px;
 }
