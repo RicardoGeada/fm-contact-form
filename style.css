@@ -1,25 +1,84 @@
 :root {
-    /* color */
-    --color-grey-900: #2a4144;
-    --color-grey-500: #86a2a5;
-    --color-white: #ffffff;
-    --color-green-600: #0C7D69;
-    --color-green-200: #E0F1e8;
-    --color-red: #d73c3c;
+  /* color */
+  --color-grey-900: #2a4144;
+  --color-grey-500: #86a2a5;
+  --color-white: #ffffff;
+  --color-green-600: #0c7d69;
+  --color-green-200: #e0f1e8;
+  --color-red: #d73c3c;
 
-    /* spacing */
-    --spacing-100: 8px;
-    --spacing-150: 12px;
-    --spacing-200: 16px;
-    --spacing-300: 24px;
-    --spacing-400: 32px;
-    --spacing-500: 40px;
-    --spacing-1600: 128px;
+  /* spacing */
+  --spacing-100: 8px;
+  --spacing-150: 12px;
+  --spacing-200: 16px;
+  --spacing-300: 24px;
+  --spacing-400: 32px;
+  --spacing-500: 40px;
+  --spacing-1600: 128px;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Karla', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Karla", sans-serif;
+  color: var(--color-grey-900);
+}
+
+body {
+  min-height: 100dvh;
+  background-color: var(--color-green-200);
+  padding: var(--spacing-400) var(--spacing-200);
+}
+
+.card {
+  background-color: var(--color-white);
+  border-radius: var(--spacing-200);
+  padding: var(--spacing-300);
+}
+
+.card .heading {
+  margin-bottom: var(--spacing-400);
+}
+
+.custom-input {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-100);
+}
+
+.custom-input label span {
+  color: var(--color-green-600);
+}
+
+.custom-input input,
+.custom-input textarea {
+  padding: var(--spacing-150) var(--spacing-300);
+  border-radius: var(--spacing-100);
+  border: 1px solid transparent;
+  outline: 1px solid var(--color-grey-500);
+}
+
+.custom-input:hover input,
+.custom-input:has(input:active) input, 
+.custom-input:has(input:focus) input,
+.custom-input:hover textarea,
+.custom-input:has(input:active) textarea,
+.custom-input:has(input:focus) textarea {
+  outline: 1px solid var(--color-green-600);
+}
+
+.custom-input:has(input:user-invalid) input,
+.custom-input:has(textarea:user-invalid) textarea {
+  outline: 1px solid var(--color-red);
+}
+
+.error-message {
+ color: var(--color-red);
+ display: none;
+}
+
+.custom-input:has(input:user-invalid) .error-message,
+.custom-input:has(textarea:user-invalid) .error-message {
+ display: block;
 }
