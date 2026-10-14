@@ -57,6 +57,7 @@ body {
   border-radius: var(--spacing-100);
   border: 1px solid transparent;
   outline: 1px solid var(--color-grey-500);
+  resize: vertical;
 }
 
 .custom-input:hover input,
