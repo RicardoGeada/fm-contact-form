@@ -99,6 +99,69 @@ body {
  display: block;
 }
 
+/* radio */
+
+.custom-radio {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-150);
+  padding: var(--spacing-150)  var(--spacing-300);
+  border-radius: var(--spacing-100);
+  border: 1px solid var(--color-grey-500);
+  background-color: var(--color-white);
+}
+
+.custom-radio:hover {
+  border-color: var(--color-green-600);
+  cursor: pointer;
+}
+
+.custom-radio:has(input[type="radio"]:active), 
+.custom-radio:has(input[type="radio"]:focus) {
+  border-color: var(--color-green-600);
+  background-color: var(--color-green-200);
+}
+
+input[type="radio"] {
+  flex-shrink: 0;
+  position: relative;
+  width: 14px;
+  height: 14px;
+  outline: transparent;
+}
+
+input[type="radio"]:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 2px solid var(--color-white);
+  border-radius: 100%;
+  background-color: var(--color-white);
+  outline: 1.5px solid var(--color-grey-500);
+}
+
+input[type="radio"]:active:after,
+input[type="radio"]:checked:active:after,
+input[type="radio"]:focus:after,
+input[type="radio"]:checked:focus:after {
+  background-color: var(--color-green-600);
+  border: 2px solid var(--color-green-200);
+  outline: 1.5px solid var(--color-green-600);
+}
+
+input[type="radio"]:checked:after {
+  background-color: var(--color-green-600);
+  border: 2px solid var(--color-white);
+  outline: 1.5px solid var(--color-green-600);
+}
+
+
+
+
+/* submit button */
 
 button[type="submit"] {
   background-color: var(--color-green-600);
