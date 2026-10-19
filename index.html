@@ -69,6 +69,7 @@
           <fieldset class="query-type-fieldset">
             <legend>Query Type <span class="required">*</span></legend>
 
+            <div>
             <label class="custom-radio">
               <input
                 type="radio"
@@ -89,7 +90,10 @@
                 required
               />
               <span>Support Request</span>
-            </label>
+            </label> 
+            </div>
+            
+            <p class="error-message body-sm">Please select a query type</p>
           </fieldset>
 
           <div class="custom-input body-sm">
@@ -104,8 +108,11 @@
           </div>
 
           <div class="custom-checkbox">
-            <input type="checkbox" name="consent" id="consent" required />
-            <label for="consent">I consent to being contacted by the team <span class="required">*</span></label>
+            <div>
+              <input type="checkbox" name="consent" id="consent" required />
+              <label for="consent">I consent to being contacted by the team <span class="required">*</span></label>
+            </div>
+            <p class="error-message body-sm">To submit this form, please consent to being contacted</p>
           </div>
 
           <button type="submit" class="body-md-bold">Submit</button>

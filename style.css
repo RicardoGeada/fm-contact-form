@@ -102,6 +102,7 @@ main {
 .error-message {
   color: var(--color-red);
   display: none;
+  width: 100%;
 }
 
 .custom-input:has(input:user-invalid) .error-message,
@@ -175,8 +176,13 @@ input[type="radio"]:checked:after {
   outline: 1.5px solid var(--color-green-600);
 }
 
+.query-type-fieldset:has(input:user-invalid) .error-message {
+  display: block;
+  margin-top: var(--spacing-200);
+}
+
 /* checkbox */
-.custom-checkbox {
+.custom-checkbox div{
   display: flex;
   align-items: center;
   gap: var(--spacing-200);
@@ -218,6 +224,11 @@ input[type="checkbox"]:checked:after {
   background-repeat: no-repeat;
 }
 
+.custom-checkbox:has(input:user-invalid) .error-message {
+  display: block;
+  margin-top: var(--spacing-200);
+}
+
 /* submit button */
 
 button[type="submit"] {
@@ -256,7 +267,7 @@ form {
   gap: var(--spacing-300);
 }
 
-.query-type-fieldset {
+.query-type-fieldset div {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-200);
@@ -270,8 +281,8 @@ form {
   margin-block: var(--spacing-200);
 }
 
-@media screen and (min-width: 37.5rem) {
-  .query-type-fieldset,
+@media screen and (min-width: 48rem) {
+  .query-type-fieldset div,
   .name-fieldset {
     flex-direction: row;
     gap: var(--spacing-200);
